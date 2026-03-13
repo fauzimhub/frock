@@ -1,0 +1,73 @@
+name: Bug Report
+description: File a bug report for the frock app
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Official Support Scope
+        Before reporting, please ensure your environment matches our supported targets:
+        - **Windows:** 10 or 11 (x86_64)
+        - **Linux:** Current Supported Debian Stable (KDE) or Fedora (KDE) (x86_64)
+        - **Android:** Version 10 or higher (arm64-v8a)
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating System
+      options:
+        - Windows 10/11
+        - Debian Stable (KDE)
+        - Fedora (KDE)
+        - Android (>= 10)
+        - Other (Not officially supported)
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: Specific OS/Version Details
+      placeholder: "e.g., Windows 11 23H2, Debian 12, Android 14"
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Device & Architecture
+      placeholder: "e.g., ThinkPad T480 (x86_64), Xiaomi Redmi 10(arm64-v8a)"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug and what you expected to see.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+    validations:
+      required: true
+  - type: upload
+    id: screenshots
+    attributes:
+      label: Screenshots or Video
+      description: Drag and drop images or videos here to show the bug.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      render: shell
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verification
+      options:
+        - label: I am using a supported OS and Architecture (x86_64 / arm64-v8a).
+          required: true
+        - label: I have checked that I'm running the app in a supported environment.
+          required: true
+        - label: I have checked that this bug isn't already reported.
+          required: true

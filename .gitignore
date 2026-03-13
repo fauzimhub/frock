@@ -1,0 +1,22 @@
+# Ignore all files
+
+*
+
+#
+# Except :
+#
+
+# Git stuffs
+!.gitignore
+
+# Github stuffs
+!.github
+.github/*
+!.github/**/*
+
+# Docs
+!README.md
+!LICENSE
+
+# Project files
+
